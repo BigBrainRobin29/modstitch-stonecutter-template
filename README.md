@@ -1,5 +1,3 @@
 # Modstitch Stonecutter Template
 
-This is the recommended template for using Modstitch.
-
-Refer to the modstitch documentation for setup instructions.
+This is an updated and adapted version of the original [isXander/modstitch-stonecutter-template](https://github.com/isXander/modstitch-stonecutter-template).
