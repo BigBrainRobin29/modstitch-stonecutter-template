@@ -19,7 +19,7 @@ modstitch {
     metadata {
         modId = "template"
         modName = "Template Mod"
-        modVersion = "${property("mod.version")}+${stonecutter.current.project}"
+        modVersion = "1.0.0+${stonecutter.current.project}"
         modDescription = "Modstitch x Stonecutter mod template"
         modLicense = "CC0-1.0"
         modGroup = "dev.bigbrainrobin29"
@@ -64,7 +64,7 @@ msPublishing {
         modrinth {
             accessToken = providers.gradleProperty("modrinth_token").orNull
 
-            prop("publish.modrinth") { projectId = it }
+            projectId = "12345678"
             changelog = rootProject.file("CHANGELOG.md").readText()
             projectDescription = rootProject.file("README.md").readText()
 
@@ -95,6 +95,6 @@ dependencies {
 tasks.register<Copy>("buildAndCollect") {
     group = "build"
     from(modstitch.finalJarTask.map { it.archiveFile } )
-    into(rootProject.layout.buildDirectory.dir("collected/${project.property("mod.version")}"))
+    into(rootProject.layout.buildDirectory.dir("collected/${modstitch.metadata.modVersion.get().split("+")[0]}"))
     dependsOn("build")
 }
