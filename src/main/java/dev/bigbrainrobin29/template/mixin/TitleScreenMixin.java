@@ -14,14 +14,14 @@ public class TitleScreenMixin {
         String baseString = "Hello from %LOADER% on Minecraft %MINECRAFT%";
 
         //? if fabric {
-        /*baseString = baseString.replace("%LOADER%", "Fabric Loader");
-        *///?} else if neoforge {
-        baseString = baseString.replace("%LOADER%", "NeoForge");
-        //?}
+        baseString = baseString.replace("%LOADER%", "Fabric Loader");
+        //?} else if neoforge {
+        /*baseString = baseString.replace("%LOADER%", "NeoForge");
+        *///?}
 
         //? if 1.21 {
-        /*baseString = baseString.replace("%MINECRAFT%", "1.21-1.21.11");
-        *///?} else if >= 26 {
+        baseString = baseString.replace("%MINECRAFT%", "1.21-1.21.11");
+        //?} else if >= 26 {
         /*baseString = baseString.replace("%MINECRAFT%", "26+");
         *///?}
 

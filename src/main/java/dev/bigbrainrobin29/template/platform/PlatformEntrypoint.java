@@ -3,7 +3,7 @@ package dev.bigbrainrobin29.template.platform;
 import dev.bigbrainrobin29.template.TemplateMod;
 
 //? if fabric {
-/*import net.fabricmc.api.ModInitializer;
+import net.fabricmc.api.ModInitializer;
 
 public class PlatformEntrypoint implements ModInitializer {
     @Override
@@ -12,8 +12,8 @@ public class PlatformEntrypoint implements ModInitializer {
         TemplateMod.initialize();
     }
 }
-*///?} else {
-import net.neoforged.bus.api.IEventBus;
+//?} else {
+/*import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 
@@ -24,4 +24,4 @@ public class PlatformEntrypoint {
         TemplateMod.initialize();
     }
 }
-//?}
+*///?}
