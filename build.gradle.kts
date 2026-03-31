@@ -1,5 +1,6 @@
 plugins {
     id("dev.isxander.modstitch.base") version "0.8.4"
+    id("dev.isxander.modstitch.publishing") version "0.8.4"
 }
 
 fun prop(name: String, consumer: (prop: String) -> Unit) {
@@ -50,6 +51,28 @@ modstitch {
         addMixinsToModManifest = true
 
         configs.register("template")
+    }
+}
+
+msPublishing {
+    mpp {
+        file = modstitch.finalJarTask.get().archiveFile
+        displayName = "${modstitch.metadata.modName.get()} ${modstitch.metadata.modVersion.get()}"
+        type = STABLE
+        dryRun = true
+
+        modrinth {
+            accessToken = providers.gradleProperty("modrinth_token").orNull
+
+            prop("publish.modrinth") { projectId = it }
+            changelog = rootProject.file("CHANGELOG.md").readText()
+            projectDescription = rootProject.file("README.md").readText()
+
+            minecraftVersionRange {
+                prop("publish.minecraft_version.min") { start = it }
+                prop("publish.minecraft_version.max") { end = it }
+            }
+        }
     }
 }
 
