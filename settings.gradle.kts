@@ -38,4 +38,3 @@ stonecutter {
 }
 
 rootProject.name = "Template Mod"
-
