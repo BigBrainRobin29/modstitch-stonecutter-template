@@ -2,7 +2,11 @@ plugins {
     id("dev.kikugie.stonecutter")
 }
 
-stonecutter active "1.21-fabric"
+stonecutter.active("1.21-neoforge")
+
+stonecutter.tasks {
+    order("publishModrinth")
+}
 
 allprojects {
     repositories {
